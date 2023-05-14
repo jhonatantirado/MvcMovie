@@ -19,6 +19,15 @@ Con Autenticacion de Windows (funciona en Windows)
 Server=localhost;Database=MvcMovieContext-7dc5;Trusted_Connection=true;TrustServerCertificate=True;MultipleActiveResultSets=true;
 
 
+Migraciones de base de datos
+Primero debe crear la base de datos vacia, manualmente en SQL Server
+
+Crear migracion
+dotnet ef migrations add InitialCreate
+
+Generar script
+dotnet ef migrations script --idempotent
+
 Otros tutoriales:
 
 Tutorial: Introducción a EF Core en una aplicación web de ASP.NET Core MVC
@@ -30,3 +39,6 @@ https://learn.microsoft.com/es-es/aspnet/core/data/ef-rp/intro?view=aspnetcore-7
 
 ASP.NET Core MVC con EF Core: serie de tutoriales
 https://learn.microsoft.com/es-es/aspnet/core/data/ef-mvc/?view=aspnetcore-7.0
+
+Applying Migrations
+https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/applying?tabs=dotnet-core-cli
