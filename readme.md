@@ -2,11 +2,11 @@
 Basado en https://learn.microsoft.com/es-es/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-7.0&tabs=visual-studio
 
 
-Cadena de coneccion de base de datos
+Cadena de conección de base de datos
 
 
 Se deben establecer como variables de entorno.
-En el caso de Mac, se debe usar el archivo "launchSettings.json"
+En el caso de Mac y Windows, se puede usar el archivo "launchSettings.json"
 
 
 Con usuario SA de SQL Server (funciona en Mac y Windows)
@@ -14,7 +14,7 @@ Con usuario SA de SQL Server (funciona en Mac y Windows)
 Server=localhost;Database=MvcMovieContext-7dc5;User Id=sa;Password=yourpassword;TrustServerCertificate=True;MultipleActiveResultSets=true;
 
 
-Con Autenticacion de Windows (funciona en Windows)
+Con Autenticacion de Windows (funciona solo en Windows)
 
 Server=localhost;Database=MvcMovieContext-7dc5;Trusted_Connection=true;TrustServerCertificate=True;MultipleActiveResultSets=true;
 
@@ -25,8 +25,12 @@ Primero debe crear la base de datos vacia, manualmente en SQL Server
 Crear migracion
 dotnet ef migrations add InitialCreate
 
-Generar script
+Generar script (recomendado)
 dotnet ef migrations script --idempotent
+
+Instrucciones para crear base de datos
+Crear base de datos manualmente usando SQL Server Management Studio
+Ejecutar el script generado por el comando "dotnet ef migrations script --idempotent"
 
 Otros tutoriales:
 
